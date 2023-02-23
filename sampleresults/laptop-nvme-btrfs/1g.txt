@@ -1,0 +1,127 @@
+rand-rw-bs1m: (g=0): rw=randrw, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=4
+rand-rw-bs4k: (g=0): rw=randrw, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=4
+seq-rw-bs4k: (g=1): rw=rw, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=4
+seq-rw-bs1m: (g=1): rw=rw, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=4
+seq-read-bs1m: (g=2): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=4
+seq-read-bs4k: (g=2): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=4
+seq-write-bs4k: (g=3): rw=write, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=4
+seq-write-bs1m: (g=3): rw=write, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=4
+fio-3.30
+Starting 8 processes
+rand-rw-bs1m: Laying out IO file (1 file / 1024MiB)
+rand-rw-bs4k: Laying out IO file (1 file / 1024MiB)
+seq-rw-bs4k: Laying out IO file (1 file / 1024MiB)
+seq-rw-bs1m: Laying out IO file (1 file / 1024MiB)
+seq-read-bs1m: Laying out IO file (1 file / 1024MiB)
+seq-read-bs4k: Laying out IO file (1 file / 1024MiB)
+seq-write-bs4k: Laying out IO file (1 file / 1024MiB)
+seq-write-bs1m: Laying out IO file (1 file / 1024MiB)
+Jobs: 1 (f=0): [_(6),/(1),_(1)][-.-%][eta 00m:00s]
+rand-rw-bs1m: (groupid=0, jobs=1): err= 0: pid=22733: Thu Feb 23 22:40:10 2023
+  read: IOPS=517, BW=518MiB/s (543MB/s)(496MiB/958msec)
+  write: IOPS=551, BW=551MiB/s (578MB/s)(528MiB/958msec); 0 zone resets
+  cpu          : usr=2.61%, sys=15.26%, ctx=915, majf=0, minf=6
+  IO depths    : 1=0.1%, 2=0.2%, 4=99.7%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=496,528,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+rand-rw-bs4k: (groupid=0, jobs=1): err= 0: pid=22734: Thu Feb 23 22:40:10 2023
+  read: IOPS=26.0k, BW=102MiB/s (106MB/s)(90.2MiB/889msec)
+    slat (usec): min=2, max=120, avg= 5.46, stdev= 1.81
+    clat (usec): min=22, max=2223, avg=111.82, stdev=222.06
+     lat (usec): min=52, max=2227, avg=117.40, stdev=222.06
+    clat percentiles (usec):
+     |  1.00th=[   51],  5.00th=[   52], 10.00th=[   53], 20.00th=[   55],
+     | 30.00th=[   56], 40.00th=[   58], 50.00th=[   61], 60.00th=[   65],
+     | 70.00th=[   75], 80.00th=[   85], 90.00th=[  106], 95.00th=[  239],
+     | 99.00th=[ 1483], 99.50th=[ 1631], 99.90th=[ 1811], 99.95th=[ 1844],
+     | 99.99th=[ 1958]
+   bw (  KiB/s): min=103374, max=103374, per=16.50%, avg=103374.00, stdev= 0.00, samples=1
+   iops        : min=25843, max=25843, avg=25843.00, stdev= 0.00, samples=1
+  write: IOPS=26.4k, BW=103MiB/s (108MB/s)(91.6MiB/889msec); 0 zone resets
+    slat (usec): min=4, max=408, avg= 8.11, stdev= 5.05
+    clat (usec): min=13, max=425, avg=26.22, stdev=17.39
+     lat (usec): min=20, max=437, avg=34.47, stdev=18.13
+    clat percentiles (usec):
+     |  1.00th=[   17],  5.00th=[   18], 10.00th=[   19], 20.00th=[   20],
+     | 30.00th=[   21], 40.00th=[   21], 50.00th=[   22], 60.00th=[   23],
+     | 70.00th=[   25], 80.00th=[   27], 90.00th=[   32], 95.00th=[   56],
+     | 99.00th=[  117], 99.50th=[  130], 99.90th=[  161], 99.95th=[  188],
+     | 99.99th=[  424]
+   bw (  KiB/s): min=104008, max=104008, per=15.70%, avg=104008.00, stdev= 0.00, samples=1
+   iops        : min=26002, max=26002, avg=26002.00, stdev= 0.00, samples=1
+  lat (usec)   : 20=14.89%, 50=33.03%, 100=45.64%, 250=4.03%, 500=0.59%
+  lat (usec)   : 750=0.34%, 1000=0.32%
+  lat (msec)   : 2=1.15%, 4=0.01%
+  cpu          : usr=7.21%, sys=38.29%, ctx=24732, majf=0, minf=36
+  IO depths    : 1=0.0%, 2=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=23097,23451,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+seq-rw-bs4k: (groupid=1, jobs=1): err= 0: pid=22738: Thu Feb 23 22:40:10 2023
+  read: IOPS=37.0k, BW=145MiB/s (152MB/s)(513MiB/3543msec)
+  write: IOPS=36.9k, BW=144MiB/s (151MB/s)(511MiB/3543msec); 0 zone resets
+  cpu          : usr=7.82%, sys=46.98%, ctx=62884, majf=0, minf=8
+  IO depths    : 1=0.1%, 2=0.1%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=131259,130885,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+seq-rw-bs1m: (groupid=1, jobs=1): err= 0: pid=22739: Thu Feb 23 22:40:10 2023
+  read: IOPS=627, BW=628MiB/s (658MB/s)(494MiB/787msec)
+  write: IOPS=673, BW=673MiB/s (706MB/s)(530MiB/787msec); 0 zone resets
+  cpu          : usr=2.54%, sys=10.18%, ctx=954, majf=0, minf=8
+  IO depths    : 1=0.1%, 2=0.2%, 4=99.7%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=494,530,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+seq-read-bs1m: (groupid=2, jobs=1): err= 0: pid=22742: Thu Feb 23 22:40:10 2023
+  read: IOPS=1347, BW=1347MiB/s (1413MB/s)(1024MiB/760msec)
+  cpu          : usr=1.19%, sys=10.67%, ctx=988, majf=0, minf=1032
+  IO depths    : 1=0.1%, 2=0.2%, 4=99.7%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=1024,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+seq-read-bs4k: (groupid=2, jobs=1): err= 0: pid=22743: Thu Feb 23 22:40:10 2023
+  read: IOPS=110k, BW=430MiB/s (451MB/s)(1024MiB/2382msec)
+  cpu          : usr=10.71%, sys=54.93%, ctx=12307, majf=0, minf=11
+  IO depths    : 1=0.1%, 2=0.1%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=262144,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+seq-write-bs4k: (groupid=3, jobs=1): err= 0: pid=22745: Thu Feb 23 22:40:10 2023
+  write: IOPS=69.7k, BW=272MiB/s (285MB/s)(1024MiB/3761msec); 0 zone resets
+  cpu          : usr=9.39%, sys=68.80%, ctx=33255, majf=0, minf=7
+  IO depths    : 1=0.1%, 2=0.1%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,262144,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+seq-write-bs1m: (groupid=3, jobs=1): err= 0: pid=22746: Thu Feb 23 22:40:10 2023
+  write: IOPS=1422, BW=1422MiB/s (1491MB/s)(1024MiB/720msec); 0 zone resets
+  cpu          : usr=2.92%, sys=16.83%, ctx=1083, majf=0, minf=8
+  IO depths    : 1=0.1%, 2=0.2%, 4=99.7%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,1024,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=4
+
+Run status group 0 (all jobs):
+   READ: bw=612MiB/s (642MB/s), 102MiB/s-518MiB/s (106MB/s-543MB/s), io=586MiB (615MB), run=889-958msec
+  WRITE: bw=647MiB/s (678MB/s), 103MiB/s-551MiB/s (108MB/s-578MB/s), io=620MiB (650MB), run=889-958msec
+
+Run status group 1 (all jobs):
+   READ: bw=284MiB/s (298MB/s), 145MiB/s-628MiB/s (152MB/s-658MB/s), io=1007MiB (1056MB), run=787-3543msec
+  WRITE: bw=294MiB/s (308MB/s), 144MiB/s-673MiB/s (151MB/s-706MB/s), io=1041MiB (1092MB), run=787-3543msec
+
+Run status group 2 (all jobs):
+   READ: bw=860MiB/s (902MB/s), 430MiB/s-1347MiB/s (451MB/s-1413MB/s), io=2048MiB (2147MB), run=760-2382msec
+
+Run status group 3 (all jobs):
+  WRITE: bw=545MiB/s (571MB/s), 272MiB/s-1422MiB/s (285MB/s-1491MB/s), io=2048MiB (2147MB), run=720-3761msec
+
