@@ -15,18 +15,12 @@ directory=testfiles
 #group_reporting
 #unlink=1
 
-[seq-read]
-rw=read
-stonewall
-
-[rand-read]
-rw=randread
-stonewall
-
 [seq-write]
-rw=write
+rw=read
 stonewall
 
 [rand-write]
 rw=randwrite
 stonewall
+
+

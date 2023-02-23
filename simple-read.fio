@@ -23,10 +23,4 @@ stonewall
 rw=randread
 stonewall
 
-[seq-write]
-rw=write
-stonewall
 
-[rand-write]
-rw=randwrite
-stonewall
