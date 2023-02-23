@@ -1,15 +1,19 @@
 # /usr/share/doc/fio/examples
 [global]
 bs=4k
+#bs=1m
 ioengine=libaio
+#iodepth 4 for SSDs
 iodepth=4
-size=10g
+size=1g
 direct=1
-numjobs=1
-runtime=60s
-ramp_time=10s
+numjobs=4
+#runtime=60s
+ramp_time=5s
 directory=testfiles
 #filename=test.file
+#group_reporting
+unlink=0
 
 [seq-read]
 rw=read
