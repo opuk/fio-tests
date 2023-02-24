@@ -4,15 +4,17 @@
 ioengine=libaio
 #iodepth 4 for SSDs
 iodepth=4
-size=10g
+size=1g
 direct=1
 numjobs=1
-#runtime=60s
+runtime=60s
+time_based
 ramp_time=5s
 directory=testfiles
 #filename=test.file
 #group_reporting
 #unlink=1
+end_fsync=1
 
 [rand-rw-bs1m]
 rw=randrw
@@ -21,6 +23,16 @@ bs=1m
 
 [rand-rw-bs4k]
 rw=randrw
+#stonewall
+bs=4k
+
+[rand-write-bs1m]
+rw=randwrite
+stonewall
+bs=1m
+
+[rand-write-bs4k]
+rw=randwrite
 #stonewall
 bs=4k
 
